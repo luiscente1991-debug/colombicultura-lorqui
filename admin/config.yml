@@ -65,17 +65,11 @@ collections:
         fields:
           - { label: "Mes", name: "mes", widget: "hidden", default: "Noviembre" }
           - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
-          - label: "Top 10"
-            name: "top10"
-            widget: "list"
-            min: 10
-            max: 10
-            summary: "{{fields.puesto}}º · {{fields.participante}}"
-            fields:
-              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
-              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
-              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
-          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+          - label: "Excel de clasificación"
+            name: "excel"
+            widget: "file"
+            required: false
+            hint: "Sube el archivo .xlsx del concurso. La web leerá únicamente la pestaña CLASIFICACION y generará automáticamente el Top 10, el podio y la clasificación completa."
       - label: "Diciembre"
         name: "diciembre"
         file: "content/rankings/diciembre.json"
@@ -83,17 +77,11 @@ collections:
         fields:
           - { label: "Mes", name: "mes", widget: "hidden", default: "Diciembre" }
           - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
-          - label: "Top 10"
-            name: "top10"
-            widget: "list"
-            min: 10
-            max: 10
-            summary: "{{fields.puesto}}º · {{fields.participante}}"
-            fields:
-              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
-              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
-              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
-          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+          - label: "Excel de clasificación"
+            name: "excel"
+            widget: "file"
+            required: false
+            hint: "Sube el archivo .xlsx del concurso. La web leerá únicamente la pestaña CLASIFICACION y generará automáticamente el Top 10, el podio y la clasificación completa."
       - label: "Enero"
         name: "enero"
         file: "content/rankings/enero.json"
@@ -101,17 +89,11 @@ collections:
         fields:
           - { label: "Mes", name: "mes", widget: "hidden", default: "Enero" }
           - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
-          - label: "Top 10"
-            name: "top10"
-            widget: "list"
-            min: 10
-            max: 10
-            summary: "{{fields.puesto}}º · {{fields.participante}}"
-            fields:
-              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
-              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
-              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
-          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+          - label: "Excel de clasificación"
+            name: "excel"
+            widget: "file"
+            required: false
+            hint: "Sube el archivo .xlsx del concurso. La web leerá únicamente la pestaña CLASIFICACION y generará automáticamente el Top 10, el podio y la clasificación completa."
       - label: "Febrero"
         name: "febrero"
         file: "content/rankings/febrero.json"
@@ -119,17 +101,11 @@ collections:
         fields:
           - { label: "Mes", name: "mes", widget: "hidden", default: "Febrero" }
           - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
-          - label: "Top 10"
-            name: "top10"
-            widget: "list"
-            min: 10
-            max: 10
-            summary: "{{fields.puesto}}º · {{fields.participante}}"
-            fields:
-              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
-              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
-              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
-          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+          - label: "Excel de clasificación"
+            name: "excel"
+            widget: "file"
+            required: false
+            hint: "Sube el archivo .xlsx del concurso. La web leerá únicamente la pestaña CLASIFICACION y generará automáticamente el Top 10, el podio y la clasificación completa."
       - label: "Marzo"
         name: "marzo"
         file: "content/rankings/marzo.json"
@@ -137,17 +113,11 @@ collections:
         fields:
           - { label: "Mes", name: "mes", widget: "hidden", default: "Marzo" }
           - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
-          - label: "Top 10"
-            name: "top10"
-            widget: "list"
-            min: 10
-            max: 10
-            summary: "{{fields.puesto}}º · {{fields.participante}}"
-            fields:
-              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
-              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
-              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
-          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+          - label: "Excel de clasificación"
+            name: "excel"
+            widget: "file"
+            required: false
+            hint: "Sube el archivo .xlsx del concurso. La web leerá únicamente la pestaña CLASIFICACION y generará automáticamente el Top 10, el podio y la clasificación completa."
       - label: "Abril"
         name: "abril"
         file: "content/rankings/abril.json"
@@ -155,17 +125,11 @@ collections:
         fields:
           - { label: "Mes", name: "mes", widget: "hidden", default: "Abril" }
           - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
-          - label: "Top 10"
-            name: "top10"
-            widget: "list"
-            min: 10
-            max: 10
-            summary: "{{fields.puesto}}º · {{fields.participante}}"
-            fields:
-              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
-              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
-              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
-          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+          - label: "Excel de clasificación"
+            name: "excel"
+            widget: "file"
+            required: false
+            hint: "Sube el archivo .xlsx del concurso. La web leerá únicamente la pestaña CLASIFICACION y generará automáticamente el Top 10, el podio y la clasificación completa."
       - label: "Mayo"
         name: "mayo"
         file: "content/rankings/mayo.json"
@@ -173,17 +137,11 @@ collections:
         fields:
           - { label: "Mes", name: "mes", widget: "hidden", default: "Mayo" }
           - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
-          - label: "Top 10"
-            name: "top10"
-            widget: "list"
-            min: 10
-            max: 10
-            summary: "{{fields.puesto}}º · {{fields.participante}}"
-            fields:
-              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
-              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
-              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
-          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+          - label: "Excel de clasificación"
+            name: "excel"
+            widget: "file"
+            required: false
+            hint: "Sube el archivo .xlsx del concurso. La web leerá únicamente la pestaña CLASIFICACION y generará automáticamente el Top 10, el podio y la clasificación completa."
 
   - name: "imagenes"
     label: "Galería"
