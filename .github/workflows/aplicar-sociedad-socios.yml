@@ -13,46 +13,80 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Actualizar web
+      - name: Actualizar web y listado de socios
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re, base64, gzip
+          import re, base64, gzip, zipfile, html as htmllib, xml.etree.ElementTree as ET
 
           path = Path('index.html')
           src = path.read_text(encoding='utf-8')
           m = re.search(r'const b="([A-Za-z0-9+/=]+)"', src)
           if not m:
               raise SystemExit('No se encontró el contenido comprimido de index.html')
-
-          html = gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8')
-
-          html = html.replace('La Asociación', 'Sociedad')
-          html = html.replace('LA ASOCIACIÓN', 'SOCIEDAD')
-          html = html.replace('Asociación', 'Sociedad').replace('asociación', 'sociedad')
-
+          page = gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8')
+          page = page.replace('La Asociación', 'Sociedad').replace('LA ASOCIACIÓN', 'SOCIEDAD')
+          page = page.replace('Asociación', 'Sociedad').replace('asociación', 'sociedad')
           css = '.societyTabs{display:flex;gap:8px;margin:0 0 22px;flex-wrap:wrap}.societyTabs a{display:inline-block;padding:10px 16px;border:1px solid #efc4c8;border-radius:999px;font-weight:900;color:var(--red);background:#fff}.societyTabs a.active{background:var(--red);color:#fff;border-color:var(--red)}'
-          if '.societyTabs{' not in html:
-              html = html.replace('</style>', css + '</style>', 1)
-
+          if '.societyTabs{' not in page:
+              page = page.replace('</style>', css + '</style>', 1)
           old = '<section class="about" id="asociacion"><div class="wrap aboutGrid">'
           new = '<section class="about" id="asociacion"><div class="wrap"><div class="societyTabs" aria-label="Apartados de Sociedad"><a class="active" href="#asociacion">La Sociedad</a><a href="socios.html">Socios</a></div><div class="aboutGrid">'
-          if old in html:
-              html = html.replace(old, new, 1)
+          if old in page:
+              page = page.replace(old, new, 1)
               marker = '</div></section>\n<section class="news" id="noticias">'
-              if marker not in html:
-                  raise SystemExit('No se encontró el cierre de la sección Sociedad')
-              html = html.replace(marker, '</div></div></section>\n<section class="news" id="noticias">', 1)
-
-          payload = base64.b64encode(gzip.compress(html.encode('utf-8'), compresslevel=9, mtime=0)).decode('ascii')
+              if marker in page:
+                  page = page.replace(marker, '</div></div></section>\n<section class="news" id="noticias">', 1)
+          payload = base64.b64encode(gzip.compress(page.encode('utf-8'), compresslevel=9, mtime=0)).decode('ascii')
           boot = '<!doctype html><meta charset="utf-8"><script>(async()=>{const b="' + payload + '",a=Uint8Array.from(atob(b),c=>c.charCodeAt(0)),t=await new Response(new Blob([a]).stream().pipeThrough(new DecompressionStream(\'gzip\'))).text();document.open();document.write(t);document.close()})()</script>'
           path.write_text(boot, encoding='utf-8')
+
+          xlsx = Path('uploads/socios.xlsx')
+          ns = {'m':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
+          with zipfile.ZipFile(xlsx) as z:
+              shared=[]
+              if 'xl/sharedStrings.xml' in z.namelist():
+                  root=ET.fromstring(z.read('xl/sharedStrings.xml'))
+                  for si in root.findall('m:si',ns):
+                      shared.append(''.join(t.text or '' for t in si.iterfind('.//m:t',ns)))
+              wb=ET.fromstring(z.read('xl/workbook.xml'))
+              relns={'r':'http://schemas.openxmlformats.org/package/2006/relationships'}
+              relroot=ET.fromstring(z.read('xl/_rels/workbook.xml.rels'))
+              relmap={r.attrib['Id']:r.attrib['Target'] for r in relroot}
+              first=wb.find('m:sheets/m:sheet',ns)
+              rid=first.attrib['{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id']
+              target=relmap[rid]
+              sp='xl/'+target.lstrip('/') if not target.startswith('xl/') else target
+              sheet=ET.fromstring(z.read(sp))
+              def cv(c):
+                  typ=c.attrib.get('t','')
+                  if typ=='inlineStr':
+                      return ''.join(t.text or '' for t in c.iterfind('.//m:t',ns)).strip()
+                  v=c.find('m:v',ns)
+                  if v is None or v.text is None:return ''
+                  raw=v.text.strip()
+                  if typ=='s':
+                      try:return shared[int(raw)].strip()
+                      except:return ''
+                  return raw
+              rows=[]
+              for row in sheet.findall('.//m:sheetData/m:row',ns):
+                  a=b=''
+                  for c in row.findall('m:c',ns):
+                      ref=c.attrib.get('r','')
+                      if ref.startswith('A'):a=cv(c)
+                      elif ref.startswith('B'):b=cv(c)
+                  if a.isdigit() and b:rows.append((a,b))
+
+          trs=''.join('<tr><td>'+htmllib.escape(n)+'</td><td>'+htmllib.escape(name)+'</td></tr>' for n,name in rows)
+          socios='''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Socios · Sociedad de Colombicultura Virgen del Rosario de Lorquí</title><style>:root{--red:#c8101e;--dark:#9e0b15;--line:#f0d4d7;--muted:#6e5f61}*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;color:#28181a;background:#fff}.top{background:var(--red);color:#fff;padding:10px 5%;font-weight:800}.head{padding:22px 5%;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{font-weight:900;color:var(--dark)}.back{padding:10px 14px;border:1px solid #efc4c8;border-radius:999px;color:var(--red);text-decoration:none;font-weight:900}.wrap{max-width:1000px;margin:auto;padding:38px 5%}.tabs{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap}.tabs a{padding:10px 16px;border:1px solid #efc4c8;border-radius:999px;text-decoration:none;font-weight:900;color:var(--red)}.tabs .active{background:var(--red);color:#fff;border-color:var(--red)}h1{font-family:Georgia,serif;font-size:clamp(32px,5vw,52px);margin:0 0 10px}.lead{color:var(--muted);margin:0 0 24px}.count{font-weight:800;color:var(--muted);margin-bottom:12px}.tableWrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px}.members{width:100%;border-collapse:collapse;background:#fff}.members th,.members td{padding:13px 16px;border-bottom:1px solid #f3e4e6;text-align:left}.members th{background:var(--red);color:#fff;text-transform:uppercase;font-size:13px;letter-spacing:.04em}.members td:first-child{width:120px;font-weight:900;color:var(--red)}@media(max-width:600px){.members th,.members td{padding:11px 10px}.members td:first-child{width:90px}}</style></head><body><div class="top">Sociedad de Colombicultura Virgen del Rosario de Lorquí</div><div class="head"><div class="brand">SOCIEDAD · LORQUÍ</div><a class="back" href="index.html#asociacion">← Volver a la web</a></div><main class="wrap"><div class="tabs"><a href="index.html#asociacion">La Sociedad</a><a class="active" href="socios.html">Socios</a></div><h1>Socios</h1><p class="lead">Listado de socios de la Sociedad de Colombicultura Virgen del Rosario de Lorquí.</p><div class="count">COUNT socios</div><div class="tableWrap"><table class="members"><thead><tr><th>Nº socio</th><th>Socio / Peña</th></tr></thead><tbody>ROWS</tbody></table></div></main></body></html>'''.replace('COUNT',str(len(rows))).replace('ROWS',trs)
+          Path('socios.html').write_text(socios,encoding='utf-8')
           PY
       - name: Guardar cambios
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add index.html socios.html
           git diff --cached --quiet && exit 0
-          git commit -m "Aplicar Sociedad y acceso a Socios"
+          git commit -m "Actualizar Sociedad y listado visible de socios"
           git push
