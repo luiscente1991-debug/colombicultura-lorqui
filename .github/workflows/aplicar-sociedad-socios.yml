@@ -1,0 +1,58 @@
+name: Aplicar Sociedad y Socios
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  aplicar:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Actualizar web
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, base64, gzip
+
+          path = Path('index.html')
+          src = path.read_text(encoding='utf-8')
+          m = re.search(r'const b="([A-Za-z0-9+/=]+)"', src)
+          if not m:
+              raise SystemExit('No se encontró el contenido comprimido de index.html')
+
+          html = gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8')
+
+          html = html.replace('La Asociación', 'Sociedad')
+          html = html.replace('LA ASOCIACIÓN', 'SOCIEDAD')
+          html = html.replace('Asociación', 'Sociedad').replace('asociación', 'sociedad')
+
+          css = '.societyTabs{display:flex;gap:8px;margin:0 0 22px;flex-wrap:wrap}.societyTabs a{display:inline-block;padding:10px 16px;border:1px solid #efc4c8;border-radius:999px;font-weight:900;color:var(--red);background:#fff}.societyTabs a.active{background:var(--red);color:#fff;border-color:var(--red)}'
+          if '.societyTabs{' not in html:
+              html = html.replace('</style>', css + '</style>', 1)
+
+          old = '<section class="about" id="asociacion"><div class="wrap aboutGrid">'
+          new = '<section class="about" id="asociacion"><div class="wrap"><div class="societyTabs" aria-label="Apartados de Sociedad"><a class="active" href="#asociacion">La Sociedad</a><a href="socios.html">Socios</a></div><div class="aboutGrid">'
+          if old in html:
+              html = html.replace(old, new, 1)
+              marker = '</div></section>\n<section class="news" id="noticias">'
+              if marker not in html:
+                  raise SystemExit('No se encontró el cierre de la sección Sociedad')
+              html = html.replace(marker, '</div></div></section>\n<section class="news" id="noticias">', 1)
+
+          payload = base64.b64encode(gzip.compress(html.encode('utf-8'), compresslevel=9, mtime=0)).decode('ascii')
+          boot = '<!doctype html><meta charset="utf-8"><script>(async()=>{const b="' + payload + '",a=Uint8Array.from(atob(b),c=>c.charCodeAt(0)),t=await new Response(new Blob([a]).stream().pipeThrough(new DecompressionStream(\'gzip\'))).text();document.open();document.write(t);document.close()})()</script>'
+          path.write_text(boot, encoding='utf-8')
+          PY
+      - name: Guardar cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Aplicar Sociedad y acceso a Socios"
+          git push
