@@ -1,26 +1,10 @@
 {
   "eventos": [
     {
-      "fecha": "2026-09-05",
-      "tipo": "entrenamiento",
-      "titulo": "Entrenamiento",
-      "hora": "07:30",
-      "lugar": "Palomar de Lorquí",
-      "descripcion": ""
-    },
-    {
-      "fecha": "2026-09-10",
-      "tipo": "concurso",
-      "titulo": "Concurso Local Lorquí",
-      "hora": "08:00",
-      "lugar": "Lorquí",
-      "descripcion": ""
-    },
-    {
-      "fecha": "2026-09-12",
-      "tipo": "entrenamiento",
-      "titulo": "Entrenamiento",
-      "hora": "07:30",
+      "fecha": "2026-09-26",
+      "tipo": "reunion",
+      "titulo": "Planificación temporada 2026/2027",
+      "hora": "10:00",
       "lugar": "Palomar de Lorquí",
       "descripcion": ""
     },
