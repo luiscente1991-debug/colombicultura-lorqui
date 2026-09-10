@@ -1,1 +1,2 @@
 Forzar despliegue de Netlify para publicar los cambios guardados en content/news.json y content/events.json.
+Nuevo intento tras reactivar créditos de Netlify: 2026-09-10 14:05 Europe/Madrid.
