@@ -1,0 +1,25 @@
+{
+  "noticias": [
+    {
+      "fecha": "2026-09-10",
+      "categoria": "Temporada 2026",
+      "titulo": "Nueva etapa en Lorquí",
+      "texto": "La sociedad vuelve a impulsar los vuelos y la actividad colombicultora en nuestro municipio.",
+      "imagen": ""
+    },
+    {
+      "fecha": "2026-09-10",
+      "categoria": "Competición",
+      "titulo": "Preparación de nuestros ejemplares",
+      "texto": "Seguimos trabajando con ilusión para afrontar una temporada al máximo nivel.",
+      "imagen": ""
+    },
+    {
+      "fecha": "2026-09-10",
+      "categoria": "Sociedad",
+      "titulo": "Información para socios",
+      "texto": "Aquí se publicarán reuniones, convocatorias, actividades y avisos de interés.",
+      "imagen": ""
+    }
+  ]
+}

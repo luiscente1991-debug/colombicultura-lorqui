@@ -1,0 +1,202 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: "es"
+
+collections:
+  - name: "actualidad"
+    label: "Noticias"
+    files:
+      - label: "Noticias publicadas"
+        name: "noticias"
+        file: "content/news.json"
+        format: "json"
+        fields:
+          - label: "Noticias"
+            name: "noticias"
+            widget: "list"
+            summary: "{{fields.fecha}} · {{fields.titulo}}"
+            fields:
+              - { label: "Fecha", name: "fecha", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+              - { label: "Categoría", name: "categoria", widget: "string", required: false }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+              - { label: "Imagen", name: "imagen", widget: "image", required: false }
+              - { label: "Enlace opcional", name: "enlace", widget: "string", required: false }
+
+  - name: "agenda"
+    label: "Calendario"
+    files:
+      - label: "Eventos del calendario"
+        name: "eventos"
+        file: "content/events.json"
+        format: "json"
+        fields:
+          - label: "Eventos"
+            name: "eventos"
+            widget: "list"
+            summary: "{{fields.fecha}} · {{fields.titulo}}"
+            fields:
+              - { label: "Fecha", name: "fecha", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+              - label: "Tipo"
+                name: "tipo"
+                widget: "select"
+                options:
+                  - { label: "Entrenamiento", value: "entrenamiento" }
+                  - { label: "Concurso / competición", value: "concurso" }
+                  - { label: "Reunión / asamblea", value: "reunion" }
+                  - { label: "Otro evento", value: "otro" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Hora", name: "hora", widget: "string", required: false, hint: "Ejemplo: 08:00" }
+              - { label: "Lugar", name: "lugar", widget: "string", required: false }
+              - { label: "Descripción", name: "descripcion", widget: "text", required: false }
+
+  - name: "clasificaciones"
+    label: "Clasificaciones"
+    files:
+      - label: "Noviembre"
+        name: "noviembre"
+        file: "content/rankings/noviembre.json"
+        format: "json"
+        fields:
+          - { label: "Mes", name: "mes", widget: "hidden", default: "Noviembre" }
+          - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
+          - label: "Top 10"
+            name: "top10"
+            widget: "list"
+            min: 10
+            max: 10
+            summary: "{{fields.puesto}}º · {{fields.participante}}"
+            fields:
+              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
+              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
+              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
+          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+      - label: "Diciembre"
+        name: "diciembre"
+        file: "content/rankings/diciembre.json"
+        format: "json"
+        fields:
+          - { label: "Mes", name: "mes", widget: "hidden", default: "Diciembre" }
+          - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
+          - label: "Top 10"
+            name: "top10"
+            widget: "list"
+            min: 10
+            max: 10
+            summary: "{{fields.puesto}}º · {{fields.participante}}"
+            fields:
+              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
+              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
+              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
+          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+      - label: "Enero"
+        name: "enero"
+        file: "content/rankings/enero.json"
+        format: "json"
+        fields:
+          - { label: "Mes", name: "mes", widget: "hidden", default: "Enero" }
+          - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
+          - label: "Top 10"
+            name: "top10"
+            widget: "list"
+            min: 10
+            max: 10
+            summary: "{{fields.puesto}}º · {{fields.participante}}"
+            fields:
+              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
+              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
+              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
+          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+      - label: "Febrero"
+        name: "febrero"
+        file: "content/rankings/febrero.json"
+        format: "json"
+        fields:
+          - { label: "Mes", name: "mes", widget: "hidden", default: "Febrero" }
+          - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
+          - label: "Top 10"
+            name: "top10"
+            widget: "list"
+            min: 10
+            max: 10
+            summary: "{{fields.puesto}}º · {{fields.participante}}"
+            fields:
+              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
+              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
+              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
+          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+      - label: "Marzo"
+        name: "marzo"
+        file: "content/rankings/marzo.json"
+        format: "json"
+        fields:
+          - { label: "Mes", name: "mes", widget: "hidden", default: "Marzo" }
+          - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
+          - label: "Top 10"
+            name: "top10"
+            widget: "list"
+            min: 10
+            max: 10
+            summary: "{{fields.puesto}}º · {{fields.participante}}"
+            fields:
+              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
+              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
+              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
+          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+      - label: "Abril"
+        name: "abril"
+        file: "content/rankings/abril.json"
+        format: "json"
+        fields:
+          - { label: "Mes", name: "mes", widget: "hidden", default: "Abril" }
+          - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
+          - label: "Top 10"
+            name: "top10"
+            widget: "list"
+            min: 10
+            max: 10
+            summary: "{{fields.puesto}}º · {{fields.participante}}"
+            fields:
+              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
+              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
+              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
+          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+      - label: "Mayo"
+        name: "mayo"
+        file: "content/rankings/mayo.json"
+        format: "json"
+        fields:
+          - { label: "Mes", name: "mes", widget: "hidden", default: "Mayo" }
+          - { label: "Temporada", name: "temporada", widget: "string", default: "2026/2027" }
+          - label: "Top 10"
+            name: "top10"
+            widget: "list"
+            min: 10
+            max: 10
+            summary: "{{fields.puesto}}º · {{fields.participante}}"
+            fields:
+              - { label: "Puesto", name: "puesto", widget: "number", value_type: "int", min: 1, max: 10 }
+              - { label: "Ejemplar / Participante", name: "participante", widget: "string", required: false }
+              - { label: "Puntuación", name: "puntuacion", widget: "string", required: false }
+          - { label: "Clasificación completa (PDF o imagen)", name: "clasificacion_completa", widget: "file", required: false }
+
+  - name: "imagenes"
+    label: "Galería"
+    files:
+      - label: "Fotos de la galería"
+        name: "galeria"
+        file: "content/gallery.json"
+        format: "json"
+        fields:
+          - label: "Fotografías"
+            name: "fotos"
+            widget: "list"
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Título / descripción", name: "titulo", widget: "string", required: false }
+              - { label: "Fotografía", name: "imagen", widget: "image" }

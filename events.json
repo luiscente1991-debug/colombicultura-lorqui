@@ -1,0 +1,36 @@
+{
+  "eventos": [
+    {
+      "fecha": "2026-09-05",
+      "tipo": "entrenamiento",
+      "titulo": "Entrenamiento",
+      "hora": "07:30",
+      "lugar": "Palomar de Lorquí",
+      "descripcion": ""
+    },
+    {
+      "fecha": "2026-09-10",
+      "tipo": "concurso",
+      "titulo": "Concurso Local Lorquí",
+      "hora": "08:00",
+      "lugar": "Lorquí",
+      "descripcion": ""
+    },
+    {
+      "fecha": "2026-09-12",
+      "tipo": "entrenamiento",
+      "titulo": "Entrenamiento",
+      "hora": "07:30",
+      "lugar": "Palomar de Lorquí",
+      "descripcion": ""
+    },
+    {
+      "fecha": "2026-09-19",
+      "tipo": "reunion",
+      "titulo": "Reunión Junta Directiva",
+      "hora": "19:00",
+      "lugar": "Sede Social",
+      "descripcion": ""
+    }
+  ]
+}
