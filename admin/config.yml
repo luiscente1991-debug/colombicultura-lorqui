@@ -143,6 +143,21 @@ collections:
             required: false
             hint: "Sube el archivo .xlsx del concurso. La web leerá únicamente la pestaña CLASIFICACION y generará automáticamente el Top 10, el podio y la clasificación completa."
 
+  - name: "sociedad"
+    label: "Sociedad"
+    files:
+      - label: "Socios"
+        name: "socios"
+        file: "content/members.json"
+        format: "json"
+        fields:
+          - label: "Excel de socios"
+            name: "excel"
+            widget: "file"
+            required: false
+            default: "/uploads/socios.xlsx"
+            hint: "Sube el archivo .xlsx de socios. La web leerá el número de socio de la columna A y el nombre o peña de la columna B."
+
   - name: "imagenes"
     label: "Galería"
     files:
