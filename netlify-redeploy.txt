@@ -1,2 +1,2 @@
-Forzar despliegue de Netlify para publicar los cambios guardados en content/news.json y content/events.json.
-Nuevo intento tras reactivar créditos de Netlify: 2026-09-10 14:05 Europe/Madrid.
+Force Netlify redeploy after rankings tabs update - 2026-09-20 16:15 Europe/Madrid
+Commit feature: abafc6d2311595fea02587a66123fbe87fa579c5
