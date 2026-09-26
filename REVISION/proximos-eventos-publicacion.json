@@ -1,0 +1,78 @@
+{
+  "publication": {
+    "published_at": "2026-09-24T18:48:06.070Z",
+    "deploy_id": "6ab56fa90e9309ef7883babf",
+    "site_id": "ce8e1f13-d2f1-4f75-8f66-2d20c3248b6d",
+    "previous_deploy": "6ab4d8aea6e4ef6b14984bf6",
+    "published_id": "6ab56fa90e9309ef7883babf",
+    "state": "ready",
+    "locked": true,
+    "database_branch": "production",
+    "url": "https://clasicolombicultura.es",
+    "checks": [
+      {
+        "name": "calendar_bundle",
+        "status": 200,
+        "bytes": 24542,
+        "contentType": "application/javascript; charset=UTF-8",
+        "matches_local": true,
+        "includes_upcoming": true
+      },
+      {
+        "name": "public_image",
+        "status": 200,
+        "bytes": 15134,
+        "contentType": "image/webp"
+      },
+      {
+        "name": "live_data",
+        "status": 200,
+        "bytes": 255086,
+        "contentType": "application/json",
+        "matches_candidate": true
+      }
+    ]
+  },
+  "live_checks": {
+    "checked_at": "2026-09-24T18:49:29.329Z",
+    "results": [
+      {
+        "name": "society",
+        "status": 200,
+        "bytes": 57193,
+        "contentType": "text/html; charset=utf-8",
+        "has_existing_event": true,
+        "has_calendar_bundle": true
+      },
+      {
+        "name": "calendar_bundle",
+        "status": 200,
+        "bytes": 24542,
+        "contentType": "application/javascript; charset=UTF-8",
+        "matches_local": true
+      },
+      {
+        "name": "public_image",
+        "status": 200,
+        "bytes": 15134,
+        "contentType": "image/webp"
+      },
+      {
+        "name": "data",
+        "status": 200,
+        "bytes": 255086,
+        "contentType": "application/json",
+        "societies": 4,
+        "entries": 25,
+        "unchanged": true
+      }
+    ],
+    "bundle_retry": {
+      "name": "calendar_bundle",
+      "status": 200,
+      "bytes": 24542,
+      "contentType": "application/javascript; charset=UTF-8",
+      "matches_local": true
+    }
+  }
+}

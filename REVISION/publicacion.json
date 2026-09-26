@@ -1,0 +1,92 @@
+{
+  "site": "https://clasicolombicultura.es",
+  "public_data_unchanged": true,
+  "societies": 3,
+  "entries": 23,
+  "served_code_matches": true,
+  "images": [
+    {
+      "id": "c563fee6-a221-40b3-a096-122514d89566",
+      "original_bytes": 1909942,
+      "original_unchanged": true,
+      "headers": {
+        "age": "2",
+        "cache-control": "public,max-age=300,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+        "content-type": "image/png"
+      },
+      "mobile": {
+        "bytes": 70316,
+        "width": 800,
+        "height": 600,
+        "reduction_percent": 96.3
+      },
+      "detail": {
+        "bytes": 157960,
+        "width": 1200,
+        "height": 900,
+        "reduction_percent": 91.7
+      }
+    },
+    {
+      "id": "a56f2206-f7da-46b6-ab38-ef95580496c2",
+      "original_bytes": 1847862,
+      "original_unchanged": true,
+      "headers": {
+        "age": "3",
+        "cache-control": "public,max-age=300,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+        "content-type": "image/png"
+      },
+      "mobile": {
+        "bytes": 68382,
+        "width": 800,
+        "height": 600,
+        "reduction_percent": 96.3
+      },
+      "detail": {
+        "bytes": 157478,
+        "width": 1200,
+        "height": 900,
+        "reduction_percent": 91.5
+      }
+    },
+    {
+      "id": "466cc2c8-02c9-4859-bbbf-f659c3b0ca5f",
+      "original_bytes": 1866822,
+      "original_unchanged": true,
+      "headers": {
+        "age": "0",
+        "cache-control": "public,max-age=300,must-revalidate",
+        "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+        "content-type": "image/png"
+      },
+      "mobile": {
+        "bytes": 118894,
+        "width": 800,
+        "height": 1066,
+        "reduction_percent": 93.6
+      },
+      "detail": {
+        "bytes": 233906,
+        "width": 1086,
+        "height": 1448,
+        "reduction_percent": 87.5
+      }
+    }
+  ],
+  "cdn_cache_probe": [
+    "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+    "\"Netlify Edge\"; hit; ttl=31536000",
+    "\"Netlify Edge\"; hit; ttl=31536000"
+  ],
+  "deployment": {
+    "id": "6ab4d8aea6e4ef6b14984bf6",
+    "context": "production",
+    "branch": "main",
+    "database_branch": "production",
+    "migrations": [],
+    "published_at": "2026-09-24T08:03:42.774Z",
+    "locked": true
+  }
+}

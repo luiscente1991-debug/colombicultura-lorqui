@@ -1,0 +1,1 @@
+import Shell from "@/components/site-shell";export default function NotFound(){return <Shell><section className="page-head"><span className="eyebrow">CLASICOLOMBICULTURA</span><h1>Sociedad no disponible.</h1><p>Puede que todavía sea un borrador o que el enlace no sea correcto.</p><a className="button" href="/#comunidades">Ver comunidades</a></section></Shell>;}

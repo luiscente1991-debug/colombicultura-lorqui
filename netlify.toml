@@ -1,7 +1,18 @@
 [build]
-  publish = "."
-
+  command = "npm run build"
+  publish = ".next"
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+  # Existing owner record ID, already required by the immutable data migration.
+  # Authentication still requires a verified Identity session and owner email.
+  SECRETS_SCAN_OMIT_KEYS = "SOCIETY_MANAGER_USER_KEY"
+[functions]
+  node_bundler = "esbuild"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 [[headers]]
-  for = "/admin/*"
+  for = "/*"
   [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

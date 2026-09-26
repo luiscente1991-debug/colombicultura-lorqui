@@ -1,0 +1,11 @@
+{
+  "actual_event": "Reunión comienzo de temporada",
+  "actual_date": "2026-10-16",
+  "month_day_independent": true,
+  "includes_today": true,
+  "sorted_date_time": true,
+  "new_events_visible": true,
+  "past_events_excluded": true,
+  "empty_state": true,
+  "input_data_unchanged": true
+}

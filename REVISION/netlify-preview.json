@@ -1,0 +1,258 @@
+{
+  "preview": "https://imagenes-20260924--clasicolombicultura.netlify.app",
+  "deploy_id": "6ab4d49a4324da00f5f54aa4",
+  "originals_exact": true,
+  "missing_image_noncacheable": true,
+  "images": [
+    {
+      "id": "c563fee6-a221-40b3-a096-122514d89566",
+      "original": {
+        "status": 200,
+        "bytes": 1909942,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/png",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+        }
+      },
+      "original_repeat": {
+        "status": 200,
+        "bytes": 1909942,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/png",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+        }
+      },
+      "mobile": {
+        "status": 200,
+        "bytes": 70316,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/webp",
+          "etag": "\"149898d79b24872907569302ce79398f5ca734a6\""
+        },
+        "width": 800,
+        "height": 600,
+        "reduction_percent": 96.3,
+        "repeat": {
+          "status": 200,
+          "bytes": 70316,
+          "headers": {
+            "age": "1",
+            "cache-control": "public,max-age=300,must-revalidate",
+            "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+            "content-type": "image/webp",
+            "etag": "\"149898d79b24872907569302ce79398f5ca734a6\""
+          }
+        }
+      },
+      "detail": {
+        "status": 200,
+        "bytes": 157960,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/webp",
+          "etag": "\"e56b390c1ccd084500cccc8aef5246f8f6b54f0e\""
+        },
+        "width": 1200,
+        "height": 900,
+        "reduction_percent": 91.7,
+        "repeat": {
+          "status": 200,
+          "bytes": 157960,
+          "headers": {
+            "age": "0",
+            "cache-control": "public,max-age=300,must-revalidate",
+            "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+            "content-type": "image/webp",
+            "etag": "\"e56b390c1ccd084500cccc8aef5246f8f6b54f0e\""
+          }
+        }
+      }
+    },
+    {
+      "id": "a56f2206-f7da-46b6-ab38-ef95580496c2",
+      "original": {
+        "status": 200,
+        "bytes": 1847862,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/png",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+        }
+      },
+      "original_repeat": {
+        "status": 200,
+        "bytes": 1847862,
+        "headers": {
+          "age": "2",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/png",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+        }
+      },
+      "mobile": {
+        "status": 200,
+        "bytes": 68382,
+        "headers": {
+          "age": "2",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/webp",
+          "etag": "\"0e4a22bf7379690c0bc885e7e8462cffbaca5ece\""
+        },
+        "width": 800,
+        "height": 600,
+        "reduction_percent": 96.3,
+        "repeat": {
+          "status": 200,
+          "bytes": 68382,
+          "headers": {
+            "age": "1",
+            "cache-control": "public,max-age=300,must-revalidate",
+            "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+            "content-type": "image/webp",
+            "etag": "\"0e4a22bf7379690c0bc885e7e8462cffbaca5ece\""
+          }
+        }
+      },
+      "detail": {
+        "status": 200,
+        "bytes": 157478,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/webp",
+          "etag": "\"05d323045f8ec19f3011bc7ea4e86c264801b03e\""
+        },
+        "width": 1200,
+        "height": 900,
+        "reduction_percent": 91.5,
+        "repeat": {
+          "status": 200,
+          "bytes": 157478,
+          "headers": {
+            "age": "0",
+            "cache-control": "public,max-age=300,must-revalidate",
+            "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+            "content-type": "image/webp",
+            "etag": "\"05d323045f8ec19f3011bc7ea4e86c264801b03e\""
+          }
+        }
+      }
+    },
+    {
+      "id": "466cc2c8-02c9-4859-bbbf-f659c3b0ca5f",
+      "original": {
+        "status": 200,
+        "bytes": 1866822,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/png",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+        }
+      },
+      "original_repeat": {
+        "status": 200,
+        "bytes": 1866822,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/png",
+          "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch"
+        }
+      },
+      "mobile": {
+        "status": 200,
+        "bytes": 118894,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/webp",
+          "etag": "\"b56fbe573030fe7f1acdbe8527d111a8a7e66f14\""
+        },
+        "width": 800,
+        "height": 1066,
+        "reduction_percent": 93.6,
+        "repeat": {
+          "status": 200,
+          "bytes": 118894,
+          "headers": {
+            "age": "0",
+            "cache-control": "public,max-age=300,must-revalidate",
+            "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+            "content-type": "image/webp",
+            "etag": "\"b56fbe573030fe7f1acdbe8527d111a8a7e66f14\""
+          }
+        }
+      },
+      "detail": {
+        "status": 200,
+        "bytes": 233906,
+        "headers": {
+          "age": "0",
+          "cache-control": "public,max-age=300,must-revalidate",
+          "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+          "content-type": "image/webp",
+          "etag": "\"f2be9e5039bcca2f189e9d62964939431ccdecbb\""
+        },
+        "width": 1086,
+        "height": 1448,
+        "reduction_percent": 87.5,
+        "repeat": {
+          "status": 200,
+          "bytes": 233906,
+          "headers": {
+            "age": "0",
+            "cache-control": "public,max-age=300,must-revalidate",
+            "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+            "content-type": "image/webp",
+            "etag": "\"f2be9e5039bcca2f189e9d62964939431ccdecbb\""
+          }
+        }
+      }
+    }
+  ],
+  "cdn_cache_probe": [
+    "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+    "\"Netlify Edge\"; hit; ttl=31536000",
+    "\"Netlify Edge\"; hit; ttl=31536000",
+    "\"Netlify Edge\"; hit; ttl=31536000",
+    "\"Netlify Edge\"; hit; ttl=31535999",
+    "\"Netlify Edge\"; hit; ttl=31535999",
+    "\"Netlify Edge\"; hit; ttl=31535999",
+    "\"Netlify Edge\"; hit; ttl=31535999"
+  ],
+  "source_cache_probe": [
+    "\"Netlify Durable\"; fwd=bypass",
+    "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+    "\"Netlify Edge\"; hit; ttl=300"
+  ],
+  "production": {
+    "id": "6ab3f45f1d1ae75ea3ab7ead",
+    "locked": true,
+    "unchanged": true
+  },
+  "preview_isolation": {
+    "database_branch": "imagenes-20260924",
+    "storage": "deploy-scoped society-files",
+    "public_images_copied": 9
+  }
+}

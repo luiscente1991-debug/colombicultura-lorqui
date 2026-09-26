@@ -1,0 +1,14 @@
+export const regions=[{name:'Andalucía',id:'andalucia',provinces:['Almería','Cádiz','Córdoba','Granada','Huelva','Jaén','Málaga','Sevilla']},{name:'Región de Murcia',id:'murcia',provinces:['Murcia']},{name:'Castilla-La Mancha',id:'castilla-la-mancha',provinces:['Albacete','Ciudad Real','Cuenca','Guadalajara','Toledo']},{name:'Comunidad Valenciana',id:'comunidad-valenciana',provinces:['Alicante','Castellón','Valencia']},{name:'Extremadura',id:'extremadura',provinces:['Badajoz','Cáceres']},{name:'Cataluña',id:'cataluna',provinces:['Barcelona','Girona','Lleida','Tarragona']}];
+export type Society={id:string;slug:string;name:string;region:string;province:string;town:string;description:string;email:string;phone:string;address:string;published:number;updated:string;crest_key:string;headline:string;intro:string;season:string;social_url:string;};
+export type Rank={position:number;participant:string;pigeon:string;points:number};
+export type EntryKind='news'|'result'|'event'|'photo'|'member';
+export type FullTable={headers:string[];rows:string[][]};
+export type Entry={id:string;society_id:string;kind:EntryKind;title:string;date:string;body:string;rows:Rank[];published:number;updated:string;created_at?:string;news_featured?:boolean;news_priority?:number;category:string;time:string;location:string;season:string;image_key:string;file_key:string;table_data:FullTable;member_number:string;};
+export const compareNews=(a:Entry,b:Entry)=>(a.news_priority??100)-(b.news_priority??100)||b.date.localeCompare(a.date)||(b.updated||'').localeCompare(a.updated||'')||a.id.localeCompare(b.id);
+export const mediaUrl=(key:string)=>'/api/media/'+encodeURIComponent(key);
+export const kindLabels:Record<EntryKind,string>={news:'noticia',result:'clasificación',event:'evento',photo:'fotografía',member:'socio'};
+export const eventTypes=[{value:'concurso',label:'Concurso / competición'},{value:'entrenamiento',label:'Entrenamiento'},{value:'reunion',label:'Reunión / asamblea'},{value:'otro',label:'Otro evento'}];
+export const competitionTypes=[{value:'local',label:'Concurso local'},{value:'comarcal',label:'Comarcal'},{value:'intercomarcal',label:'Intercomarcal'},{value:'regional',label:'Regional'},{value:'nacional',label:'Nacional'},{value:'otro',label:'Otra competición'}];
+export const competitionLabel=(category:string)=>competitionTypes.find(t=>t.value===(category||'local'))?.label||category;
+export const slugify=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,110);
+export const displayDate=(s:string)=>new Date(s+'T12:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'});

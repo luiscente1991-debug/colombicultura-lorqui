@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Campeonato Copa Región de Murcia.",
+    "key": "c563fee6-a221-40b3-a096-122514d89566",
+    "variant": "original",
+    "bytes": 1909942,
+    "width": 1448,
+    "height": 1086,
+    "format": "PNG",
+    "quality": null
+  },
+  {
+    "title": "Campeonato Copa Región de Murcia.",
+    "key": "c563fee6-a221-40b3-a096-122514d89566",
+    "variant": "mobile",
+    "bytes": 70316,
+    "width": 800,
+    "height": 600,
+    "format": "WEBP",
+    "quality": 85
+  },
+  {
+    "title": "Campeonato Copa Región de Murcia.",
+    "key": "c563fee6-a221-40b3-a096-122514d89566",
+    "variant": "detail",
+    "bytes": 157960,
+    "width": 1200,
+    "height": 900,
+    "format": "WEBP",
+    "quality": 90
+  },
+  {
+    "title": "Campeonato Regional de Murcia Los Periquitos 2026",
+    "key": "a56f2206-f7da-46b6-ab38-ef95580496c2",
+    "variant": "original",
+    "bytes": 1847862,
+    "width": 1448,
+    "height": 1086,
+    "format": "PNG",
+    "quality": null
+  },
+  {
+    "title": "Campeonato Regional de Murcia Los Periquitos 2026",
+    "key": "a56f2206-f7da-46b6-ab38-ef95580496c2",
+    "variant": "mobile",
+    "bytes": 68382,
+    "width": 800,
+    "height": 600,
+    "format": "WEBP",
+    "quality": 85
+  },
+  {
+    "title": "Campeonato Regional de Murcia Los Periquitos 2026",
+    "key": "a56f2206-f7da-46b6-ab38-ef95580496c2",
+    "variant": "detail",
+    "bytes": 157478,
+    "width": 1200,
+    "height": 900,
+    "format": "WEBP",
+    "quality": 90
+  },
+  {
+    "title": "Palomos clasificados para el campeonato Nacional por la Región de Murcia.",
+    "key": "466cc2c8-02c9-4859-bbbf-f659c3b0ca5f",
+    "variant": "original",
+    "bytes": 1866822,
+    "width": 1086,
+    "height": 1448,
+    "format": "PNG",
+    "quality": null
+  },
+  {
+    "title": "Palomos clasificados para el campeonato Nacional por la Región de Murcia.",
+    "key": "466cc2c8-02c9-4859-bbbf-f659c3b0ca5f",
+    "variant": "mobile",
+    "bytes": 118894,
+    "width": 800,
+    "height": 1066,
+    "format": "WEBP",
+    "quality": 85
+  },
+  {
+    "title": "Palomos clasificados para el campeonato Nacional por la Región de Murcia.",
+    "key": "466cc2c8-02c9-4859-bbbf-f659c3b0ca5f",
+    "variant": "detail",
+    "bytes": 233906,
+    "width": 1086,
+    "height": 1448,
+    "format": "WEBP",
+    "quality": 90
+  }
+]
